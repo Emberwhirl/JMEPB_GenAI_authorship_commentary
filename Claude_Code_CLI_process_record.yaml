@@ -1,0 +1,65 @@
+---
+schema_version: "1.0"
+record_type: generative-ai-use-process-record
+
+provenance:
+  created_on: "2026-08-15"
+  basis: retrospective reconstruction by the AI system from session context
+
+ai_systems:
+  - provider: Google
+    model: gemini-3.1-pro-preview
+    harness: Claude Code CLI
+    role: structural refinement and language editing
+
+execution_environment:
+  harness:
+    name: Claude Code CLI
+    version: "2.1.233"
+  compatibility_bridge:
+    name: CLIProxyAPI
+    version: "7.2.86"
+
+agent_skills:
+  - name: george-orwell-skill
+    version: "0.1.0"
+    type: writing-style instruction set
+    purpose: >
+      audit and refine prose for clarity, concreteness, concision,
+      and natural rhythm
+
+interactions:
+  - id: structural-and-language-revision
+    date: "2026-08-14"
+    source_prompt_ids: [gemini-1]
+    prompt_summary: >
+      Review the source editorials and the existing manuscript draft, preserve
+      the required short Precis and main-text structure, refine organization and
+      language, and audit the prose against the supplied Orwell-inspired rules.
+      Continue until a better draft is delivered.
+    response_summary: >
+      Gemini 3.1 Pro refined the manuscript's structure and language,
+      applied the requested style audit, and incorporated the edited prose into the working
+      manuscript after author review.
+
+prompts:
+  - id: gemini-1
+    date: "2026-08-14"
+    purpose: structural refinement and language editing
+    text: |
+      There are recently two calls for commentaries, one in the journal of medical ethics and the other in its sister journal that was recently released called JME practical bioethics. These two calls are interconnected, and I've applied to both of them. Luckily, my proposal was successful for the JME practical bioethics. But for you to understand the general picture, you can find the editorials for both calls at @src/ . These two calls were actually published in commentary format and include some tables and figures, so I advise you to take a close look at them carefully. Requirements: Invited commentaries should be about 1000 words. They are due (at the latest) 1 month after the author receives the invitation; however, earlier submissions are welcomed, and accepted pieces will be published online as soon as possible. In lieu of an abstract, the first section should be labelled 'Précis' with a concise overview of what the commentary argues. Up to two tables or illustrations and up to 10 references (with some flexibility, as needed) may be included. Remember: in lieu of an abstract, please title the first section of your commentary "Précis" and give a short summary of what you argue. This can be just a few sentences. Then title the text section "Commentary" or — if you have additional subsections later — "Introduction," to signal the start of the main commentary.
+      I attached my draft here @JMEPB_commentary_draft.md . Please use /george-orwell-skill to polish the writing style. Also the following requirements on writing:
+      1. Never use a metaphor, simile or other figure of speech which you are used to seeing in print.
+      2. Never use a long word where a short one will do.
+      3. If it is possible to cut a word out, always cut it out.
+      4. Never use the passive where you can use the active.
+      5. Never use a foreign phrase, a scientific word or a jargon word if you can think of an everyday English equivalent.
+      6. Break any of these rules sooner than say anything outright barbarous.
+      Review every prose output against these rules before delivering.
+      7. don't build a straw man to knock down. use not X, it's Y once per piece, max
+      8. two examples are enough. don't stretch to three
+      9. don't announce what you're about to say. say it
+      10. don't end two paragraphs in a row with punchlines
+      11. vary the length and shape of neighboring sentences
+      12. break any of these rules sooner than write like a machine
+      /goal do not stop until a better draft is delivered
