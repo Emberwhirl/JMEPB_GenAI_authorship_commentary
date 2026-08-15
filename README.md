@@ -1,5 +1,7 @@
 # Generative AI process records for a medical ethics commentary
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21959480.svg)](https://doi.org/10.5281/zenodo.21959480)
+
 This repository documents how generative AI was used in preparing the manuscript *Available upon reasonable request: the authorship function that was already dead*, intended for submission to [*JME Practical Bioethics*](https://jmepb.bmj.com/).
 
 The purpose of this repository is transparency. It gives readers a clearer view of which AI tools were used, what they were asked to do, and how their outputs contributed to the manuscript. It is written for readers with or without a technical background.
@@ -138,4 +140,8 @@ Linked third-party materials and projects remain subject to their respective lic
 
 ## Archiving and citation
 
-This repository is intended to be archived through Zenodo so that a permanent Digital Object Identifier (DOI) can be assigned. The DOI and recommended citation will be added here after the archived release is created.
+Version `v1.0.0` is permanently archived on [Zenodo](https://zenodo.org/records/21959480).
+
+**Recommended citation:**
+
+> Xiao, Yu-Tian. (2026). *JMEPB_GenAI_authorship_commentary* (v1.0.0) [Workflow]. Zenodo. [https://doi.org/10.5281/zenodo.21959480](https://doi.org/10.5281/zenodo.21959480)
