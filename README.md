@@ -1,6 +1,6 @@
 # Generative AI process records for a medical ethics commentary
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21959480.svg)](https://doi.org/10.5281/zenodo.21959480)
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.21959480-007ec6)](https://doi.org/10.5281/zenodo.21959480)
 
 This repository documents how generative AI was used in preparing the manuscript *Available upon reasonable request: the authorship function that was already dead*, intended for submission to [*JME Practical Bioethics*](https://jmepb.bmj.com/).
 
