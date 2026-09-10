@@ -1,0 +1,52 @@
+---
+schema_version: "1.1"
+record_type: generative-ai-use-process-record
+submission_stage: R1
+
+provenance:
+  created_on: "2026-09-10"
+  basis: retrospective summary based on the author's account supplied during R1 repository preparation
+
+ai_systems:
+  - provider: Anthropic
+    model: Claude Fable 5.1
+    model_identifier: claude-fable-5-1
+    harness: Claude Cowork
+    role: copyediting and language editing during revision
+
+execution_environment:
+  harness:
+    name: Claude Cowork
+    version: null
+    version_note: Exact platform version was not supplied.
+
+interactions:
+  - id: r1-copyediting
+    date: "2026-09-04"
+    prompt_summary: >
+      The author copied individual lines or paragraphs into Claude Cowork
+      and asked Fable 5.1 for copyediting suggestions during revision.
+      The exchanges were fragmented rather than a single drafting prompt.
+    response_summary: >
+      Language-editing suggestions for the supplied passages.
+    human_review: >
+      The revised manuscript states that AI-generated outputs were reviewed,
+      critically evaluated, and manually revised by the author, who retains
+      responsibility for the manuscript.
+
+prompt_deposit:
+  format: summary-only
+  file: null
+  prompt_count: 0
+  scope: summary only
+  verbatim_prompts_deposited: false
+  complete_transcript: false
+  reason: >
+    The author chose to summarise these fragmented copyediting exchanges
+    rather than deposit individual verbatim prompts.
+
+prompts: []
+
+limitations:
+  - This is an author-reported use summary, not a provider-generated audit log.
+  - No complete transcript or passage-by-passage record is deposited.

@@ -1,14 +1,21 @@
 ---
-schema_version: "1.0"
+schema_version: "1.1"
 record_type: generative-ai-use-process-record
+submission_stage: R0
 
 provenance:
   created_on: "2026-08-15"
   basis: retrospective reconstruction by the AI system from session context
+  updated_on: "2026-09-10"
+  update_note: >
+    Structure aligned with schema version 1.1. The reconstructed prompt summary
+    was removed in favour of the verbatim prompt; the prompt date follows the
+    retrospective interaction record.
 
 ai_systems:
   - provider: Google
-    model: gemini-3.1-pro-preview
+    model: Gemini 3.1 Pro
+    model_identifier: gemini-3.1-pro-preview
     harness: Claude Code CLI
     role: structural refinement and language editing
 
@@ -32,15 +39,18 @@ interactions:
   - id: structural-and-language-revision
     date: "2026-08-14"
     source_prompt_ids: [gemini-1]
-    prompt_summary: >
-      Review the source editorials and the existing manuscript draft, preserve
-      the required short Precis and main-text structure, refine organization and
-      language, and audit the prose against the supplied Orwell-inspired rules.
-      Continue until a better draft is delivered.
     response_summary: >
       Gemini 3.1 Pro refined the manuscript's structure and language,
       applied the requested style audit, and incorporated the edited prose into the working
       manuscript after author review.
+
+prompt_deposit:
+  format: inline-verbatim
+  file: null
+  prompt_count: 1
+  scope: key structural and language editing prompt
+  verbatim_prompts_deposited: true
+  complete_transcript: false
 
 prompts:
   - id: gemini-1
@@ -63,3 +73,7 @@ prompts:
       11. vary the length and shape of neighboring sentences
       12. break any of these rules sooner than write like a machine
       /goal do not stop until a better draft is delivered
+
+limitations:
+  - The interaction account is a retrospective reconstruction, not a provider-generated audit log.
+  - The deposited prompt is not a complete session transcript.
