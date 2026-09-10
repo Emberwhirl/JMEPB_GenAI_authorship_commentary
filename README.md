@@ -1,6 +1,6 @@
 # Generative AI process records for a medical ethics commentary
 
-![Version](https://img.shields.io/badge/version-v1.1.0-2563eb)
+![Version](https://img.shields.io/badge/version-v1.1.1-2563eb)
 [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.21959479-007ec6)](https://doi.org/10.5281/zenodo.21959479)
 
 This repository documents how generative AI was used for the first submission and revision of *Available upon reasonable request: the authorship function that was already dead* at [*JME Practical Bioethics*](https://jmepb.bmj.com/).
@@ -12,13 +12,15 @@ The purpose of this repository is transparency. It gives readers a clearer view 
 ```mermaid
 %%{init: {
   "theme": "base",
+  "fontFamily": "Arial, sans-serif",
   "flowchart": {
     "htmlLabels": true,
     "curve": "basis",
-    "nodeSpacing": 36,
-    "rankSpacing": 28,
-    "padding": 22,
-    "wrappingWidth": 300
+    "nodeSpacing": 48,
+    "rankSpacing": 40,
+    "padding": 20,
+    "wrappingWidth": 300,
+    "subGraphTitleMargin": {"top": 16, "bottom": 24}
   },
   "themeVariables": {
     "fontSize": "16px",
@@ -27,16 +29,17 @@ The purpose of this repository is transparency. It gives readers a clearer view 
   }
 }}%%
 flowchart TD
+    %% Connect phase transitions at group borders so arrows stay clear of titles.
     classDef human fill:#eff6ff,stroke:#1d4ed8,stroke-width:2px,color:#1e3a8a,rx:8px,ry:8px;
     classDef aiPrimary fill:#faf5ff,stroke:#7e22ce,stroke-width:2px,color:#3b0764,rx:8px,ry:8px;
     classDef aiSub fill:#ffffff,stroke:#9333ea,stroke-width:1.5px,stroke-dasharray:4 4,color:#581c87,rx:8px,ry:8px;
     classDef aiEdit fill:#f0fdf4,stroke:#15803d,stroke-width:2px,color:#14532d,rx:8px,ry:8px;
 
-    subgraph R0 ["<b>R0 · First submission</b>"]
+    subgraph R0 ["R0 · First submission"]
         direction TB
         H1["👤 <b>Human Direction & Ideation</b><br/>Conceives core arguments & sets task scope"]:::human
 
-        subgraph S1 ["<b>Phase 1: Research & Drafting</b><br/>Harness: Claude Cowork"]
+        subgraph S1 ["Phase 1: Research & Drafting · Claude Cowork"]
             direction TB
             B1["💡 <b>Fable 5 (Brainstorming)</b><br/>Interacts with human to surface blind spots & refine scope"]:::aiPrimary
 
@@ -49,17 +52,17 @@ flowchart TD
             F2["📝 <b>Fable 5 (Synthesis)</b><br/>Checks & synthesises subagent outputs<br/>into a raw draft"]:::aiPrimary
         end
 
-        H2["👤 <b> Human Review & Steering</b><br/>Evaluates raw draft & plans agent setup and pipeline for editing"]:::human
+        H2["👤 <b>Human Review & Steering</b><br/>Evaluates raw draft & plans agent setup and pipeline for editing"]:::human
 
-        subgraph S2 ["<b>Phase 2: Editing</b><br/>Harness: Claude Code CLI"]
+        subgraph S2 ["Phase 2: Editing · Claude Code CLI"]
             direction TB
-            E1["⚙️ <b>Claude Code CLI + CLIProxyAPI </b>"]:::aiEdit
+            E1["⚙️ <b>Claude Code CLI + CLIProxyAPI</b>"]:::aiEdit
             E2["✨ <b>Gemini 3.1 Pro</b><br/>Structural and language editing"]:::aiEdit
         end
 
-        H3["👤 <b> Human Verification & Revision</b><br/>Manually audits references, revises text & takes full responsibility"]:::human
+        H3["👤 <b>Human Verification & Revision</b><br/>Manually audits references, revises text & takes full responsibility"]:::human
 
-        H1 --> B1
+        H1 --> S1
         B1 --> F1
         F1 --> O1
         F1 --> O2
@@ -67,28 +70,28 @@ flowchart TD
         O1 --> F2
         O2 --> F2
         O3 --> F2
-        F2 --> H2
-        H2 --> E1
+        S1 --> H2
+        H2 --> S2
         E1 --> E2
-        E2 --> H3
+        S2 --> H3
     end
 
-    subgraph R1 ["<b>R1 · First revision</b>"]
+    subgraph R1 ["R1 · First revision"]
         direction TB
         H4["👤 <b>Human Revision & Direction</b><br/>Responds to editorial feedback<br/>Selects passages for copyediting"]:::human
 
-        subgraph S3 ["<b>Copyediting</b><br/>Harness: Claude Cowork"]
+        subgraph S3 ["Copyediting · Claude Cowork"]
             direction TB
             E3["✨ <b>Fable 5.1</b><br/>Suggests language edits for<br/>selected lines and paragraphs"]:::aiEdit
         end
 
         H5["👤 <b>Human Review & Final Revision</b><br/>Evaluates suggestions, revises text<br/>& retains full responsibility"]:::human
 
-        H4 --> E3
-        E3 --> H5
+        H4 --> S3
+        S3 --> H5
     end
 
-    H3 --> H4
+    H3 --> R1
 
     style R0 fill:#f8fafc,stroke:#94a3b8,stroke-width:1.5px,color:#334155
     style R1 fill:#f0fdfa,stroke:#0f766e,stroke-width:2px,color:#134e4a

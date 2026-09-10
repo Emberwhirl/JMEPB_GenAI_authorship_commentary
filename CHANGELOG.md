@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.1.1
+
+- Keep subgraph titles on a single line and add title margin so they no longer overlap the node text.
+
 ## v1.1.0 — R1
 
 - Deposit three key Fable 5 prompts, with historical context and attachment descriptions.
