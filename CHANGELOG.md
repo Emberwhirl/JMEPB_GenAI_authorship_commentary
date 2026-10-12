@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.2.0 — Publication
+
+- Link the published commentary in *JME Practical Bioethics* (https://doi.org/10.1136/jmepb-2026-000330) and the accompanying *Journal of Medical Ethics* blog post.
+- Add citations for the commentary and the blog post alongside the repository citation.
+- Bump the version badge to v1.2.0.
+
 ## v1.1.1
 
 - Keep subgraph titles on a single line and add title margin so they no longer overlap the node text.

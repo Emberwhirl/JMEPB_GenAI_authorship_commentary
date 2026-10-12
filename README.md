@@ -1,11 +1,16 @@
 # Generative AI process records for a medical ethics commentary
 
-![Version](https://img.shields.io/badge/version-v1.1.1-2563eb)
+![Version](https://img.shields.io/badge/version-v1.2.0-2563eb)
 [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.21959479-007ec6)](https://doi.org/10.5281/zenodo.21959479)
 
-This repository documents how generative AI was used for the first submission and revision of *Available upon reasonable request: the authorship function that was already dead* at [*JME Practical Bioethics*](https://jmepb.bmj.com/).
+This repository documents how generative AI was used for the first submission and revision of *[Available upon reasonable request: the authorship function that was already dead](https://doi.org/10.1136/jmepb-2026-000330)*, a commentary published in [*JME Practical Bioethics*](https://jmepb.bmj.com/).
 
 The purpose of this repository is transparency. It gives readers a clearer view of which AI tools were used, what they were asked to do, and how their outputs contributed to the manuscript. It is written for readers with or without a technical background.
+
+## Publications
+
+- **Commentary:** [*Available upon reasonable request: the authorship function that was already dead*](https://doi.org/10.1136/jmepb-2026-000330), *JME Practical Bioethics*, 2026, 2(3), e000330. 
+- **Blog post:** [*When "available upon reasonable request" meets the generative AI use declaration*](https://blogs.bmj.com/medical-ethics/2026/10/04/when-available-upon-reasonable-request-meets-the-generative-ai-use-declaration/), JME Blog, 2026-10-04.
 
 ## Process at a glance
 
@@ -182,8 +187,13 @@ Linked third-party materials and projects remain subject to their respective lic
 
 ## Archiving and citation
 
-This repository is archived on [Zenodo](https://doi.org/10.5281/zenodo.21959479). All DOIs in this README are the [concept DOI](https://doi.org/10.5281/zenodo.21959479), which remains stable across versions.
+### Repository
 
-**Citation:**
+This repository is archived on [Zenodo](https://doi.org/10.5281/zenodo.21959479). All repository DOIs in this README are the [concept DOI](https://doi.org/10.5281/zenodo.21959479), which remains stable across versions.
 
 > Xiao, Yu-Tian. (2026). *JMEPB_GenAI_authorship_commentary* [Workflow]. Zenodo. [https://doi.org/10.5281/zenodo.21959479](https://doi.org/10.5281/zenodo.21959479)
+
+### Publications
+
+> 1. Xiao YT. Available upon reasonable request: the authorship function that was already dead. *JME Practical Bioethics*. 2026;2(3):e000330. https://doi.org/10.1136/jmepb-2026-000330
+> 2. Xiao YT. When "available upon reasonable request" meets the generative AI use declaration. *JME Blog*. 2026-10-04. https://blogs.bmj.com/medical-ethics/2026/10/04/when-available-upon-reasonable-request-meets-the-generative-ai-use-declaration/
